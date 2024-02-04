@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ${INGRESS_NAME}
+  namespace: ${NAMESPACE}
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "1000"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "1000"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "1000"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+    nginx.org/client-max-body-size: "100m"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - "[domain].[com]"
+    - "*.[domain].[com]"
+    secretName: ${TLS_SECRET_NAME}
+  rules:
+  - host: [subdomain].[domain].[com]
+    http:
+      paths:
+      - pathType: Prefix
+        path: ${PATH_PREFIX}
+        backend:
+          service:
+            name: ${NAME_SERVICE}-service
+            port:
+              number: [port]
+  - host: [subdomain].[domain].[com]
+    http:
+      paths:
+      - pathType: Prefix
+        path: ${PATH_PREFIX_2}
+        backend:
+          service:
+            name: ${NAME_SERVICE_2}-service
+            port:
+              number: [port]
