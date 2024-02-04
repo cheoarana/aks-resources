@@ -11,12 +11,21 @@ This repository is offered to support the start of the great world of kubernetes
 ```
 .
 ├── aks-resources
+│   ├──ingress
+│   │    └── ingress-rules.yaml
 │   └──namespace
-│      └── namespace.yaml
-└── README.md
+│        └── namespace.yaml
+├── LICENSE
+└── readme.md
 ```
 
-
+## Ingress
+For ingress, the variables are explained as follows
+| Variable | Example                                        |
+| -------- | ---------------------------------------------- |
+| `[domain].[com]` | `"myamazingdomain.com"`                |
+| `[subdomain].[domain].[com]` | `test.myamazingdomain.com` |
+| `[port]` | `8080`                                         |
 
 ## License
 
