@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: '${AKS_IMAGE_NAME}-deployment'
+  namespace: '${NAMESPACE}'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: '${AKS_IMAGE_NAME}-deployment'
+  template:
+    metadata:
+      labels:
+        app: '${AKS_IMAGE_NAME}-deployment'
+    spec:
+      containers:
+      - name: '${AKS_IMAGE_NAME}'
+        image: '${CONTAINER_REGISTRY_NAME}.azurecr.io/${AKS_IMAGE_NAME}:${Build.BuildId}'
+        imagePullPolicy: Always
+        env:
+        - name: ENVIRONMENT
+          value: '${ENVIRONMENT}'
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: '${AKS_IMAGE_NAME}-service'
+  namespace: '${NAMESPACE}'
+spec:
+  ports:
+  - port: 8080
+    targetPort: 80
+    name: http
+    protocol: TCP
+  selector:
+    app: '${AKS_IMAGE_NAME}-deployment'
+  type: NodePort
