@@ -11,8 +11,10 @@ This repository is offered to support the start of the great world of kubernetes
 ```
 .
 ├── aks-resources
+│   ├──deployment-service
+│   │    └── aks.yml
 │   ├──ingress
-│   │    └── ingress-rules.yaml
+│   │    └── ingress-rules.yml
 │   └──namespace
 │        └── namespace.yaml
 ├── LICENSE
