@@ -32,6 +32,18 @@ For ingress, the variables are explained as follows
 ## Manifest files
 `aks.yml` file contains the configuration of a deployment and a service for better automation. 
 
+## Execution/use of manifest files
+### Linux
+#### namespace
+Variables contained in the `namespace.yaml` file 
+| Variable | Example                                        |
+| -------- | ---------------------------------------------- |
+| **NAMESPACE_NAME** | Variable to replace with the namespace name |
+
+```sh
+NAMESPACE=ns-cheoarana  envsubst <namespace/namespace.yaml> namespace-cheoarana.yaml
+```
+
 ## License
 
 This library is licensed under the MIT-0 License. See the [LICENSE](./LICENSE) file.
