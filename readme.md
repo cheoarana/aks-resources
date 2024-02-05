@@ -77,3 +77,7 @@ INGRESS_NAME=cheoarana-ingress NAMESPACE_NAME=ns-cheoarana TLS_SECRET_NAME=cheoa
 ## License
 
 This library is licensed under the MIT-0 License. See the [LICENSE](./LICENSE) file.
+
+## Links
+
+- [Ingress controller on Azure Kubernetes Service](https://learn.microsoft.com/en-us/azure/aks/ingress-tls?tabs=azure-cli)
