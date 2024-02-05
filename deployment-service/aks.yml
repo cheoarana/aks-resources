@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: '${AKS_IMAGE_NAME}'
-        image: '${CONTAINER_REGISTRY_NAME}.azurecr.io/${AKS_IMAGE_NAME}:${Build.BuildId}'
+        image: '${CONTAINER_REGISTRY_NAME}.azurecr.io/${AKS_IMAGE_NAME}:${BUILD_BUILDID}'
         imagePullPolicy: Always
         env:
         - name: ENVIRONMENT
