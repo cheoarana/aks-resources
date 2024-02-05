@@ -21,6 +21,15 @@ This repository is offered to support the start of the great world of kubernetes
 └── readme.md
 ```
 
+## Secret TLS
+As a prerequisite to run the manifest files, a tls secret must be created, for this purpose use the following command as follows 
+
+```sh
+kubectl create secret tls cheoarana-tls --namespace ns-cheoarana --key key_file.key --cert cert_file.crt  
+```
+
+
+
 ## Ingress
 For ingress, the variables are explained as follows
 | Variable | Example                                        |
