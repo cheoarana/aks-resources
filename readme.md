@@ -29,6 +29,9 @@ For ingress, the variables are explained as follows
 | `[subdomain].[domain].[com]` | `test.myamazingdomain.com` |
 | `[port]` | `8080`                                         |
 
+## Manifest files
+`aks.yml` file contains the configuration of a deployment and a service for better automation. 
+
 ## License
 
 This library is licensed under the MIT-0 License. See the [LICENSE](./LICENSE) file.
