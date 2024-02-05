@@ -49,6 +49,7 @@ Variables contained in the `namespace.yaml` file
 | -------- | ---------------------------------------------- |
 | **NAMESPACE_NAME** | Variable to replace with the namespace name |
 
+**LINUX:**
 ```sh
 NAMESPACE_NAME=ns-cheoarana  envsubst <namespace/namespace.yaml> namespace-cheoarana.yaml
 ```
@@ -63,6 +64,7 @@ Variables contained in the `aks.yml` file
 | **BUILD_BUILDID** | Variable to replace by docke image version number |
 | **ENVIRONMENT** | Variable to replace with the name of the environment |
 
+**LINUX:**
 ```sh
 AKS_IMAGE_NAME=cheoarana/rest-hello-world NAMESPACE_NAME=ns-cheoarana CONTAINER_REGISTRY_NAME=acrcheoarana BUILD_BUILDID=1.0 ENVIRONMENT=production envsubst <deployment-service/aks.yml> aks-cheoarana.yml
 ```
@@ -80,6 +82,7 @@ Variables contained in the `ingress-rules.yml` file
 | **PATH_PREFIX_2** | Variable to be replaced by the path of second endpoint|
 | **NAME_SERVICE_2** | Variable to be replaced by the name of the service deployed in the previous step |
 
+**LINUX:**
 ```sh
 INGRESS_NAME=cheoarana-ingress NAMESPACE_NAME=ns-cheoarana TLS_SECRET_NAME=cheoarana-tls PATH_PREFIX=/ NAME_SERVICE=cheoarana/rest-hello-world PATH_PREFIX_2=/api/v1 NAME_SERVICE_2=cheoarana/backend envsubst <ingress/ingress-rules.yml> ingress-rules-cheoarana.yaml
 ```
